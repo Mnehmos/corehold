@@ -47,6 +47,7 @@ func _update_hud() -> void:
 	hud_panel.get_node("HPLabel").text = "HP: %d" % RunState.tower_hp
 	hud_panel.get_node("WaveLabel").text = "Wave: %d" % RunState.wave_number
 	hud_panel.get_node("KillsLabel").text = "Kills: %d" % RunState.kills
+	hud_panel.get_node("SalvageLabel").text = "Salvage: %d" % RunState.salvage
 	hud_panel.get_node("TimerLabel").text = _format_time(RunState.run_time)
 
 func _format_time(seconds: float) -> String:
