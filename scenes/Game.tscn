@@ -55,3 +55,18 @@ text = "Kills: 0"
 [node name="TimerLabel" type="Label" parent="HUD/HUDPanel"]
 layout_mode = 2
 text = "0:00"
+
+[node name="EndRunButton" type="Button" parent="HUD"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -156.0
+offset_top = -56.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "End Run"
