@@ -1,3 +1,16 @@
+# Corehold
+# File: scripts/util/DebugOverlay.gd
+# Purpose: Debug overlay for development toggled with F12
+#
+# Contribution Flow:
+# Issue → Branch → Test → Implement → PR → Review → Revise → Docs → Squash Merge → Main
+#
+# Rules:
+# - Do not edit without a linked issue.
+# - Keep changes scoped to the issue.
+# - Add or update tests when practical.
+# - Update docs when behavior, architecture, setup, or data formats change.
+
 extends CanvasLayer
 ## Debug overlay for development. Toggle with F12.
 ## Shows FPS, enemy count, wave number, and other debug info.

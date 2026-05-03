@@ -1,3 +1,16 @@
+# Corehold
+# File: scripts/ui/Game.gd
+# Purpose: Game scene controller managing the active run
+#
+# Contribution Flow:
+# Issue → Branch → Test → Implement → PR → Review → Revise → Docs → Squash Merge → Main
+#
+# Rules:
+# - Do not edit without a linked issue.
+# - Keep changes scoped to the issue.
+# - Add or update tests when practical.
+# - Update docs when behavior, architecture, setup, or data formats change.
+
 extends Node2D
 ## Game scene controller. Manages the active run.
 
