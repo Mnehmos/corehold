@@ -52,6 +52,10 @@ text = "Wave: 0"
 layout_mode = 2
 text = "Kills: 0"
 
+[node name="SalvageLabel" type="Label" parent="HUD/HUDPanel"]
+layout_mode = 2
+text = "Salvage: 0"
+
 [node name="TimerLabel" type="Label" parent="HUD/HUDPanel"]
 layout_mode = 2
 text = "0:00"
