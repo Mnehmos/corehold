@@ -41,6 +41,7 @@ func _process(delta: float) -> void:
 	_update_target()
 	_rotate_toward_target()
 	_fire_cooldown -= delta
+	_try_fire()
 
 func take_damage(amount: int, source: String = "") -> void:
 	hp = max(0, hp - amount)
@@ -84,3 +85,17 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	_enemies_in_range.erase(body)
+
+func _try_fire() -> void:
+	if _target == null or _fire_cooldown > 0.0:
+		return
+	_fire_cooldown = 1.0 / fire_rate
+	_spawn_projectile()
+
+func _spawn_projectile() -> void:
+	var projectile_scene: PackedScene = preload("res://scenes/Projectile.tscn")
+	var projectile: Node2D = projectile_scene.instantiate()
+	get_tree().current_scene.add_child(projectile)
+	var direction: Vector2 = global_position.direction_to(_target.global_position)
+	projectile.global_position = global_position
+	projectile.setup(damage, projectile_speed, direction, tower_range)
