@@ -1,3 +1,17 @@
+<!--
+Corehold
+File: README.md
+Purpose: Project overview, setup instructions, and contributor workflow
+
+Contribution Flow:
+Issue → Branch → Test → Implement → PR → Review → Revise → Docs → Squash Merge → Main
+
+Rules:
+- Do not edit without a linked issue.
+- Keep changes scoped to the issue.
+- Update related docs when behavior, architecture, setup, or data formats change.
+-->
+
 # Corehold
 
 > One tower. Infinite pressure. Build the machine before the swarm solves you.
@@ -5,6 +19,22 @@
 Corehold is a 2D single-tower incremental roguelite defense game built with Godot 4.x.
 
 The player controls one central tower. Enemies attack from all directions in waves. The tower fires automatically, but the player makes decisions about upgrades, modules, targeting, power, heat, defense, and long-term progression.
+
+## Contributor Workflow
+
+This project follows a strict issue-first Gitflow process.
+
+```
+Issue → Branch → Test → Implement → PR → Review → Revise → Docs → Squash Merge → Main
+```
+
+Human and LLM contributors must read:
+
+- `docs/LLM_CONTRIBUTING.md`
+- `docs/TDD_GUIDE.md`
+- `docs/FILE_HEADERS.md`
+
+No contributor should work directly on `main`.
 
 ## Quick Start
 

@@ -1,3 +1,16 @@
+# Corehold
+# File: scripts/core/GameState.gd
+# Purpose: Global game state singleton that persists between scenes
+#
+# Contribution Flow:
+# Issue → Branch → Test → Implement → PR → Review → Revise → Docs → Squash Merge → Main
+#
+# Rules:
+# - Do not edit without a linked issue.
+# - Keep changes scoped to the issue.
+# - Add or update tests when practical.
+# - Update docs when behavior, architecture, setup, or data formats change.
+
 extends Node
 ## Global game state singleton. Persists between scenes.
 ## Attach as an Autoload singleton in project.godot.
