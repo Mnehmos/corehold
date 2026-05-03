@@ -79,11 +79,20 @@ def should_check(filepath: str) -> bool:
 
 
 def has_header(filepath: str) -> bool:
-    """Check if a file contains the workflow marker."""
+    """Check if a file contains the workflow marker in its leading comment block.
+
+    Only the first 20 lines are inspected so that the marker appearing
+    in body text, code samples, or prose does NOT satisfy the check.
+    The header template is always within the first 15 lines of any file.
+    """
     try:
         with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
-            content = f.read(4096)  # Only read first 4KB
-            return WORKFLOW_MARKER in content
+            for i, line in enumerate(f):
+                if i >= 20:
+                    break
+                if WORKFLOW_MARKER in line:
+                    return True
+            return False
     except (OSError, PermissionError):
         return False
 
