@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "id": "superheated_rounds",
+      "name": "Superheated Rounds",
+      "description": "Bullets deal +20% damage. Each shot adds +1 heat. At 80% heat, bullets ignite enemies.",
+      "category": "weapon",
+      "rarity": "uncommon",
+      "effects": [
+        {"stat": "damage_multiplier", "value": 0.2, "operation": "add"},
+        {"stat": "heat_per_shot_bonus", "value": 1.0, "operation": "add"}
+      ],
+      "tags": ["damage", "heat_tradeoff", "thermal"]
+    },
+    {
+      "id": "reinforced_hull",
+      "name": "Reinforced Hull",
+      "description": "Increase max HP by 30.",
+      "category": "defense",
+      "rarity": "common",
+      "effects": [
+        {"stat": "max_hp", "value": 30, "operation": "add"}
+      ],
+      "tags": ["defense", "hp"]
+    }
+  ]
+}

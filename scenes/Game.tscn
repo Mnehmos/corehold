@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqgame001"]
+
+[ext_resource type="Script" path="res://scripts/ui/Game.gd" id="1_game"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_game")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.03, 0.03, 0.06, 1)
+
+[node name="Tower" type="Node2D" parent="."]
+position = Vector2(0, 0)
+
+[node name="TowerBody" type="ColorRect" parent="Tower"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.2, 0.6, 1, 1)
+
+[node name="TowerBarrel" type="ColorRect" parent="Tower"]
+offset_left = -3.0
+offset_top = -30.0
+offset_right = 3.0
+offset_bottom = 0.0
+color = Color(0.4, 0.8, 1, 1)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="HUDPanel" type="HBoxContainer" parent="HUD"]
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 400.0
+offset_bottom = 48.0
+theme_override_constants/separation = 24
+
+[node name="HPLabel" type="Label" parent="HUD/HUDPanel"]
+layout_mode = 2
+text = "HP: 100"
+
+[node name="WaveLabel" type="Label" parent="HUD/HUDPanel"]
+layout_mode = 2
+text = "Wave: 0"
+
+[node name="KillsLabel" type="Label" parent="HUD/HUDPanel"]
+layout_mode = 2
+text = "Kills: 0"
+
+[node name="TimerLabel" type="Label" parent="HUD/HUDPanel"]
+layout_mode = 2
+text = "0:00"

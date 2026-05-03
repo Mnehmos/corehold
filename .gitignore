@@ -1,0 +1,41 @@
+# Godot 4.x .gitignore
+
+# Godot-specific
+.import/
+export_presets.cfg
+*.translation
+.mono/
+data_*_*
+*.gdextension
+
+# Godot editor
+.godot/
+*.uid
+
+# Build outputs
+/builds/
+/export/
+*.exe
+*.x86_64
+*.x86
+*.app
+*.dmg
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Kilo config (local dev tool)
+.kilo/
+
+# Node modules (if any tooling)
+node_modules/

@@ -1,0 +1,69 @@
+{
+  "items": [
+    {
+      "id": "machine_gun",
+      "name": "Machine Gun",
+      "description": "Reliable rapid-fire weapon. Low damage, high fire rate.",
+      "damage_type": "kinetic",
+      "damage": 8,
+      "fire_rate": 6.0,
+      "range": 280.0,
+      "heat_per_shot": 2.0,
+      "power_draw": 10.0,
+      "projectile_speed": 500.0,
+      "rarity": "common"
+    },
+    {
+      "id": "railgun",
+      "name": "Railgun",
+      "description": "Heavy single-shot weapon. Piercing damage with recoil.",
+      "damage_type": "kinetic",
+      "damage": 40,
+      "fire_rate": 0.8,
+      "range": 400.0,
+      "heat_per_shot": 15.0,
+      "power_draw": 25.0,
+      "projectile_speed": 800.0,
+      "rarity": "uncommon"
+    },
+    {
+      "id": "plasma_lance",
+      "name": "Plasma Lance",
+      "description": "Melts armor with focused plasma. Very high power draw.",
+      "damage_type": "thermal",
+      "damage": 30,
+      "fire_rate": 1.5,
+      "range": 250.0,
+      "heat_per_shot": 20.0,
+      "power_draw": 35.0,
+      "projectile_speed": 350.0,
+      "rarity": "rare"
+    },
+    {
+      "id": "arc_emitter",
+      "name": "Arc Emitter",
+      "description": "Electric discharge that chains to nearby enemies.",
+      "damage_type": "electric",
+      "damage": 15,
+      "fire_rate": 2.0,
+      "range": 200.0,
+      "heat_per_shot": 8.0,
+      "power_draw": 20.0,
+      "projectile_speed": 600.0,
+      "rarity": "uncommon"
+    },
+    {
+      "id": "missile_pod",
+      "name": "Missile Pod",
+      "description": "Slow explosive missiles. Area damage on impact.",
+      "damage_type": "explosive",
+      "damage": 25,
+      "fire_rate": 1.0,
+      "range": 350.0,
+      "heat_per_shot": 10.0,
+      "power_draw": 15.0,
+      "projectile_speed": 250.0,
+      "rarity": "common"
+    }
+  ]
+}

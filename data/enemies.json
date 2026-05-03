@@ -1,0 +1,96 @@
+{
+  "items": [
+    {
+      "id": "swarmer",
+      "name": "Swarmer",
+      "hp": 15,
+      "speed": 120.0,
+      "damage": 5,
+      "salvage_reward": 2,
+      "color": "#55ff55",
+      "size": 8,
+      "description": "Fast, weak, comes in large numbers."
+    },
+    {
+      "id": "runner",
+      "name": "Runner",
+      "hp": 25,
+      "speed": 180.0,
+      "damage": 8,
+      "salvage_reward": 3,
+      "color": "#55ffff",
+      "size": 10,
+      "description": "Very fast, low HP."
+    },
+    {
+      "id": "brute",
+      "name": "Brute",
+      "hp": 80,
+      "speed": 60.0,
+      "damage": 20,
+      "salvage_reward": 8,
+      "color": "#ff8800",
+      "size": 18,
+      "description": "Slow, tanky, hits hard."
+    },
+    {
+      "id": "shielded",
+      "name": "Shielded",
+      "hp": 40,
+      "shield": 40,
+      "speed": 80.0,
+      "damage": 10,
+      "salvage_reward": 6,
+      "color": "#8888ff",
+      "size": 14,
+      "description": "Has a regenerating energy shield."
+    },
+    {
+      "id": "bomber",
+      "name": "Bomber",
+      "hp": 30,
+      "speed": 100.0,
+      "damage": 35,
+      "salvage_reward": 5,
+      "color": "#ff3333",
+      "size": 12,
+      "description": "Explodes on contact for heavy damage."
+    },
+    {
+      "id": "splitter",
+      "name": "Splitter",
+      "hp": 30,
+      "speed": 90.0,
+      "damage": 5,
+      "salvage_reward": 4,
+      "color": "#cc55cc",
+      "size": 14,
+      "split_count": 3,
+      "split_hp": 10,
+      "description": "Splits into smaller enemies on death."
+    },
+    {
+      "id": "jammer",
+      "name": "Jammer",
+      "hp": 35,
+      "speed": 70.0,
+      "damage": 5,
+      "salvage_reward": 7,
+      "color": "#ffff33",
+      "size": 12,
+      "description": "Reduces tower targeting range while alive."
+    },
+    {
+      "id": "boss_core",
+      "name": "Boss Core",
+      "hp": 500,
+      "speed": 40.0,
+      "damage": 50,
+      "salvage_reward": 100,
+      "color": "#ff0044",
+      "size": 32,
+      "is_boss": true,
+      "description": "Massive boss enemy. Slow but devastating."
+    }
+  ]
+}
