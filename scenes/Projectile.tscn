@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqprojectile001"]
+[gd_scene load_steps=3 format=3 uid="uid://bqprojectile001"]
 
 [ext_resource type="Script" path="res://scripts/combat/Projectile.gd" id="1_proj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_proj"]
+resource_name = "CircleShape2D_proj"
+radius = 4.0
 
 [node name="Projectile" type="Node2D"]
 script = ExtResource("1_proj")
@@ -18,7 +22,3 @@ collision_mask = 2
 
 [node name="HitboxCollision" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_proj")
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_proj"]
-resource_name = "CircleShape2D_proj"
-radius = 4.0
