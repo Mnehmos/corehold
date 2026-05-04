@@ -31,6 +31,7 @@ pointing/emulate_touch_from_mouse=true
 EventBus="*res://scripts/core/EventBus.gd"
 GameState="*res://scripts/core/GameState.gd"
 RunState="*res://scripts/core/RunState.gd"
+Constants="*res://scripts/core/Constants.gd"
 
 [input]
 

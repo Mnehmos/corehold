@@ -11,8 +11,9 @@
 # - Add or update tests when practical.
 # - Update docs when behavior, architecture, setup, or data formats change.
 
-class_name Constants
+extends Node
 ## Game-wide constants and tuning values.
+## Registered as an Autoload singleton in project.godot.
 
 # Arena
 const ARENA_WIDTH: int = 1280

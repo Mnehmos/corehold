@@ -11,7 +11,7 @@
 # - Add or update tests when practical.
 # - Update docs when behavior, architecture, setup, or data formats change.
 
-extends Node
+extends RefCounted
 ## JSON data loader utility. Loads game data from the /data directory.
 
 static func load_json(file_path: String) -> Dictionary:

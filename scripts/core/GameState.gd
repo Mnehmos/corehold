@@ -31,11 +31,35 @@ func _ready() -> void:
 	_load_game_data()
 
 func _load_game_data() -> void:
-	weapons_data = JsonLoader.load_data_array("weapons.json")
-	enemies_data = JsonLoader.load_data_array("enemies.json")
-	upgrades_data = JsonLoader.load_data_array("upgrades.json")
-	waves_data = JsonLoader.load_json("res://data/waves.json")
+	weapons_data = _load_data_array("weapons.json")
+	enemies_data = _load_data_array("enemies.json")
+	upgrades_data = _load_data_array("upgrades.json")
+	waves_data = _load_json("res://data/waves.json")
 	_validate_loaded_data()
+
+static func _load_json(file_path: String) -> Dictionary:
+	if not FileAccess.file_exists(file_path):
+		push_error("GameState: Data file not found: %s" % file_path)
+		return {}
+	var file: FileAccess = FileAccess.open(file_path, FileAccess.READ)
+	if file == null:
+		push_error("GameState: Failed to open: %s" % file_path)
+		return {}
+	var json_string: String = file.get_as_text()
+	file.close()
+	var json: JSON = JSON.new()
+	if json.parse(json_string) != OK:
+		push_error("GameState: Parse error in %s at line %d: %s" % [file_path, json.get_error_line(), json.get_error_message()])
+		return {}
+	return json.get_data()
+
+static func _load_data_array(file_name: String) -> Array:
+	var data: Dictionary = _load_json("res://data/%s" % file_name)
+	if data.is_empty():
+		return []
+	if data.has("items"):
+		return data["items"]
+	return []
 
 func _validate_loaded_data() -> void:
 	if weapons_data.is_empty():
