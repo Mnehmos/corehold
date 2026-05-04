@@ -1,6 +1,6 @@
 # Corehold
 # File: scripts/combat/Tower.gd
-# Purpose: Tower entity handling HP, rotation, targeting, and weapon firing
+# Purpose: Tower entity handling HP, rotation, targeting, weapon firing, heat, and shields
 #
 # Contribution Flow:
 # Issue → Branch → Test → Implement → PR → Review → Revise → Docs → Squash Merge → Main
@@ -12,7 +12,7 @@
 # - Update docs when behavior, architecture, setup, or data formats change.
 
 extends Node2D
-## Tower entity. Handles HP, rotation, targeting, and weapon firing.
+## Tower entity. Handles HP, rotation, targeting, weapon firing, heat, and shields.
 
 signal died
 
@@ -21,11 +21,15 @@ signal died
 @export var fire_rate: float = Constants.DEFAULT_FIRE_RATE
 @export var damage: int = Constants.DEFAULT_DAMAGE
 @export var projectile_speed: float = Constants.DEFAULT_PROJECTILE_SPEED
+@export var heat_per_shot: float = 2.0
 
 var hp: int = 0
 var _fire_cooldown: float = 0.0
 var _target: Node2D = null
 var _enemies_in_range: Array[Node2D] = []
+
+var heat_system: Node = null
+var shield_system: Node = null
 
 @onready var _barrel: Node2D = $BarrelPivot
 @onready var _range_area: Area2D = $RangeArea
@@ -34,6 +38,8 @@ var _enemies_in_range: Array[Node2D] = []
 func _ready() -> void:
 	add_to_group("tower")
 	hp = max_hp
+	heat_system = $HeatSystem
+	shield_system = $ShieldSystem
 	if _range_area:
 		_range_area.area_entered.connect(_on_area_entered)
 		_range_area.area_exited.connect(_on_area_exited)
@@ -42,10 +48,17 @@ func _process(delta: float) -> void:
 	_update_target()
 	_rotate_toward_target()
 	_fire_cooldown -= delta
+	if heat_system:
+		heat_system.process_heat(delta)
+	if shield_system:
+		shield_system.process_shield(delta)
 	_try_fire()
 
 func take_damage(amount: int, source: String = "") -> void:
-	hp = max(0, hp - amount)
+	var remaining: int = amount
+	if shield_system:
+		remaining = shield_system.absorb_damage(amount)
+	hp = max(0, hp - remaining)
 	EventBus.tower_damaged.emit(amount, source)
 	RunState.tower_hp = hp
 	if hp <= 0:
@@ -98,7 +111,14 @@ func _get_enemy_owner(area: Area2D) -> Node2D:
 func _try_fire() -> void:
 	if _target == null or _fire_cooldown > 0.0:
 		return
-	_fire_cooldown = 1.0 / fire_rate
+	if heat_system and heat_system.is_overheated:
+		return
+	var effective_fire_rate: float = fire_rate
+	if heat_system:
+		effective_fire_rate *= heat_system.get_fire_rate_multiplier()
+	_fire_cooldown = 1.0 / effective_fire_rate
+	if heat_system and not heat_system.add_heat(heat_per_shot):
+		return
 	_spawn_projectile()
 
 func _spawn_projectile() -> void:

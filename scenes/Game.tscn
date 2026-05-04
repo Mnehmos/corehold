@@ -19,7 +19,7 @@ layer = 10
 anchors_preset = 0
 offset_left = 16.0
 offset_top = 16.0
-offset_right = 480.0
+offset_right = 600.0
 offset_bottom = 48.0
 theme_override_constants/separation = 24
 
@@ -42,6 +42,61 @@ text = "Salvage: 0"
 [node name="TimerLabel" type="Label" parent="HUD/HUDPanel"]
 layout_mode = 2
 text = "0:00"
+
+[node name="HeatBar" type="ProgressBar" parent="HUD"]
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 56.0
+offset_right = 216.0
+offset_bottom = 72.0
+max_value = 100.0
+value = 0.0
+show_percentage = false
+
+[node name="HeatLabel" type="Label" parent="HUD/HeatBar"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 0.0
+offset_right = 60.0
+offset_bottom = 16.0
+text = "HEAT"
+
+[node name="ShieldBar" type="ProgressBar" parent="HUD"]
+anchors_preset = 0
+offset_left = 230.0
+offset_top = 56.0
+offset_right = 430.0
+offset_bottom = 72.0
+max_value = 50.0
+value = 50.0
+show_percentage = false
+
+[node name="ShieldLabel" type="Label" parent="HUD/ShieldBar"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 0.0
+offset_right = 60.0
+offset_bottom = 16.0
+text = "SHIELD"
+
+[node name="BossBar" type="ProgressBar" parent="HUD"]
+visible = false
+anchors_preset = 0
+offset_left = 440.0
+offset_top = 340.0
+offset_right = 840.0
+offset_bottom = 364.0
+max_value = 500.0
+value = 500.0
+show_percentage = false
+
+[node name="BossLabel" type="Label" parent="HUD/BossBar"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -16.0
+offset_right = 100.0
+offset_bottom = 0.0
+text = "BOSS CORE"
 
 [node name="EndRunButton" type="Button" parent="HUD"]
 anchors_preset = 3
