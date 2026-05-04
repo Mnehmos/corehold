@@ -35,8 +35,8 @@ func _ready() -> void:
 	add_to_group("tower")
 	hp = max_hp
 	if _range_area:
-		_range_area.body_entered.connect(_on_body_entered)
-		_range_area.body_exited.connect(_on_body_exited)
+		_range_area.area_entered.connect(_on_area_entered)
+		_range_area.area_exited.connect(_on_area_exited)
 
 func _process(delta: float) -> void:
 	_update_target()
@@ -80,12 +80,20 @@ func _rotate_toward_target() -> void:
 	var angle: float = global_position.direction_to(_target.global_position).angle()
 	_barrel.rotation = angle
 
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemies"):
-		_enemies_in_range.append(body)
+func _on_area_entered(area: Area2D) -> void:
+	var owner_node: Node2D = _get_enemy_owner(area)
+	if owner_node and owner_node.is_in_group("enemies"):
+		_enemies_in_range.append(owner_node)
 
-func _on_body_exited(body: Node2D) -> void:
-	_enemies_in_range.erase(body)
+func _on_area_exited(area: Area2D) -> void:
+	var owner_node: Node2D = _get_enemy_owner(area)
+	_enemies_in_range.erase(owner_node)
+
+func _get_enemy_owner(area: Area2D) -> Node2D:
+	var parent: Node = area.get_parent()
+	if parent is Node2D:
+		return parent as Node2D
+	return null
 
 func _try_fire() -> void:
 	if _target == null or _fire_cooldown > 0.0:

@@ -24,7 +24,7 @@ var _distance_traveled: float = 0.0
 
 func _ready() -> void:
 	if _hitbox:
-		_hitbox.body_entered.connect(_on_body_entered)
+		_hitbox.area_entered.connect(_on_area_entered)
 
 func _process(delta: float) -> void:
 	var movement: Vector2 = direction * speed * delta
@@ -40,7 +40,8 @@ func setup(proj_damage: int, proj_speed: float, proj_direction: Vector2, proj_ra
 	max_range = proj_range
 	rotation = direction.angle()
 
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemies") and body.has_method("take_damage"):
-		body.take_damage(damage)
+func _on_area_entered(area: Area2D) -> void:
+	var parent: Node = area.get_parent()
+	if parent and parent.is_in_group("enemies") and parent.has_method("take_damage"):
+		parent.take_damage(damage)
 		queue_free()
