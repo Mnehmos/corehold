@@ -32,6 +32,7 @@ var _enemies_in_range: Array[Node2D] = []
 @onready var _body: ColorRect = $TowerBody
 
 func _ready() -> void:
+	add_to_group("tower")
 	hp = max_hp
 	if _range_area:
 		_range_area.body_entered.connect(_on_body_entered)
