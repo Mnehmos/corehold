@@ -1,6 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqtower001"]
 
 [ext_resource type="Script" path="res://scripts/combat/Tower.gd" id="1_tower"]
+[ext_resource type="Script" path="res://scripts/systems/HeatSystem.gd" id="2_heat"]
+[ext_resource type="Script" path="res://scripts/systems/ShieldSystem.gd" id="3_shield"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_range"]
 resource_name = "CircleShape2D_range"
@@ -42,3 +44,9 @@ collision_mask = 4
 
 [node name="HitboxCollision" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_hitbox")
+
+[node name="HeatSystem" type="Node" parent="."]
+script = ExtResource("2_heat")
+
+[node name="ShieldSystem" type="Node" parent="."]
+script = ExtResource("3_shield")
