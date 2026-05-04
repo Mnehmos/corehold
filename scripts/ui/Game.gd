@@ -47,7 +47,6 @@ func _process(delta: float) -> void:
 	if not _is_spawning and _enemies_alive <= 0 and not _is_wave_rest and _wave_number > 0:
 		_is_wave_rest = true
 		_wave_rest_timer = Constants.WAVE_REST_TIME
-	_process_spawning(delta)
 	_update_hud()
 
 func _spawn_tower() -> void:
