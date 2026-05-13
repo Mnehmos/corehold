@@ -3,25 +3,265 @@
     {
       "id": "superheated_rounds",
       "name": "Superheated Rounds",
-      "description": "Bullets deal +20% damage. Each shot adds +1 heat. At 80% heat, bullets ignite enemies.",
+      "description": "+20% damage. +1 heat per shot.",
       "category": "weapon",
       "rarity": "uncommon",
       "effects": [
         {"stat": "damage_multiplier", "value": 0.2, "operation": "add"},
         {"stat": "heat_per_shot_bonus", "value": 1.0, "operation": "add"}
       ],
-      "tags": ["damage", "heat_tradeoff", "thermal"]
+      "tags": ["damage", "heat_tradeoff"]
     },
     {
       "id": "reinforced_hull",
       "name": "Reinforced Hull",
-      "description": "Increase max HP by 30.",
+      "description": "+30 max HP.",
       "category": "defense",
       "rarity": "common",
       "effects": [
         {"stat": "max_hp", "value": 30, "operation": "add"}
       ],
       "tags": ["defense", "hp"]
+    },
+    {
+      "id": "rapid_loader",
+      "name": "Rapid Loader",
+      "description": "+25% fire rate.",
+      "category": "weapon",
+      "rarity": "common",
+      "effects": [
+        {"stat": "fire_rate_multiplier", "value": 0.25, "operation": "add"}
+      ],
+      "tags": ["fire_rate"]
+    },
+    {
+      "id": "extended_barrel",
+      "name": "Extended Barrel",
+      "description": "+40 tower range.",
+      "category": "weapon",
+      "rarity": "common",
+      "effects": [
+        {"stat": "tower_range", "value": 40.0, "operation": "add"}
+      ],
+      "tags": ["range"]
+    },
+    {
+      "id": "coolant_flush",
+      "name": "Coolant Flush",
+      "description": "+50% heat decay rate.",
+      "category": "cooling",
+      "rarity": "common",
+      "effects": [
+        {"stat": "heat_decay_multiplier", "value": 0.5, "operation": "add"}
+      ],
+      "tags": ["cooling"]
+    },
+    {
+      "id": "thermal_insulation",
+      "name": "Thermal Insulation",
+      "description": "+20 max heat.",
+      "category": "cooling",
+      "rarity": "common",
+      "effects": [
+        {"stat": "max_heat", "value": 20.0, "operation": "add"}
+      ],
+      "tags": ["cooling", "heat_tradeoff"]
+    },
+    {
+      "id": "shield_boost",
+      "name": "Shield Boost",
+      "description": "+20 max shield.",
+      "category": "defense",
+      "rarity": "common",
+      "effects": [
+        {"stat": "max_shield", "value": 20.0, "operation": "add"}
+      ],
+      "tags": ["defense", "shield"]
+    },
+    {
+      "id": "reactor_upgrade",
+      "name": "Reactor Upgrade",
+      "description": "+20 power capacity.",
+      "category": "power",
+      "rarity": "common",
+      "effects": [
+        {"stat": "power_capacity", "value": 20.0, "operation": "add"}
+      ],
+      "tags": ["power"]
+    },
+    {
+      "id": "scrap_magnet",
+      "name": "Scrap Magnet",
+      "description": "+50% salvage from kills.",
+      "category": "economy",
+      "rarity": "uncommon",
+      "effects": [
+        {"stat": "salvage_multiplier", "value": 0.5, "operation": "add"}
+      ],
+      "tags": ["economy"]
+    },
+    {
+      "id": "overdrive_injector",
+      "name": "Overdrive Injector",
+      "description": "+40% damage but +3 heat per shot.",
+      "category": "weapon",
+      "rarity": "rare",
+      "effects": [
+        {"stat": "damage_multiplier", "value": 0.4, "operation": "add"},
+        {"stat": "heat_per_shot_bonus", "value": 3.0, "operation": "add"}
+      ],
+      "tags": ["damage", "heat_tradeoff"]
+    },
+    {
+      "id": "nano_repair",
+      "name": "Nano Repair",
+      "description": "Regenerate +1 HP per second.",
+      "category": "defense",
+      "rarity": "uncommon",
+      "effects": [
+        {"stat": "hp_regen", "value": 1.0, "operation": "add"}
+      ],
+      "tags": ["defense", "hp"]
+    },
+    {
+      "id": "shield_regen_booster",
+      "name": "Shield Regen Booster",
+      "description": "+100% shield regen rate.",
+      "category": "defense",
+      "rarity": "uncommon",
+      "effects": [
+        {"stat": "shield_regen_multiplier", "value": 1.0, "operation": "add"}
+      ],
+      "tags": ["defense", "shield"]
+    },
+    {
+      "id": "armor_plates",
+      "name": "Armor Plates",
+      "description": "-15% damage taken.",
+      "category": "defense",
+      "rarity": "uncommon",
+      "effects": [
+        {"stat": "damage_reduction", "value": 0.15, "operation": "add"}
+      ],
+      "tags": ["defense"]
+    },
+    {
+      "id": "hyper_cooler",
+      "name": "Hyper Cooler",
+      "description": "Removes overheat penalty entirely.",
+      "category": "cooling",
+      "rarity": "rare",
+      "effects": [
+        {"stat": "no_overheat_penalty", "value": 1, "operation": "set"}
+      ],
+      "tags": ["cooling"]
+    },
+    {
+      "id": "bounty_hunter",
+      "name": "Bounty Hunter",
+      "description": "+1 salvage per kill. Boss kills give +50 bonus.",
+      "category": "economy",
+      "rarity": "uncommon",
+      "effects": [
+        {"stat": "salvage_per_kill", "value": 1, "operation": "add"},
+        {"stat": "boss_bonus", "value": 50, "operation": "add"}
+      ],
+      "tags": ["economy", "boss"]
+    },
+    {
+      "id": "swarm_sweeper",
+      "name": "Swarm Sweeper",
+      "description": "+30% fire rate against enemies below 30% HP.",
+      "category": "weapon",
+      "rarity": "uncommon",
+      "effects": [
+        {"stat": "execute_fire_rate_bonus", "value": 0.3, "operation": "add"}
+      ],
+      "tags": ["fire_rate", "swarm_control"]
+    },
+    {
+      "id": "piercing_rounds",
+      "name": "Piercing Rounds",
+      "description": "Projectiles pierce through 1 extra enemy.",
+      "category": "weapon",
+      "rarity": "rare",
+      "effects": [
+        {"stat": "pierce_count", "value": 1, "operation": "add"}
+      ],
+      "tags": ["damage"]
+    },
+    {
+      "id": "critical_systems",
+      "name": "Critical Systems",
+      "description": "15% chance to deal double damage.",
+      "category": "weapon",
+      "rarity": "rare",
+      "effects": [
+        {"stat": "crit_chance", "value": 0.15, "operation": "add"},
+        {"stat": "crit_multiplier", "value": 2.0, "operation": "set"}
+      ],
+      "tags": ["damage"]
+    },
+    {
+      "id": "vent_accelerator",
+      "name": "Vent Accelerator",
+      "description": "Emergency vent cooldown reduced by 50%.",
+      "category": "cooling",
+      "rarity": "uncommon",
+      "effects": [
+        {"stat": "vent_cooldown_multiplier", "value": 0.5, "operation": "multiply"}
+      ],
+      "tags": ["cooling", "ability"]
+    },
+    {
+      "id": "overclock_tuner",
+      "name": "Overclock Tuner",
+      "description": "Overclock lasts 2s longer.",
+      "category": "cooling",
+      "rarity": "uncommon",
+      "effects": [
+        {"stat": "overclock_duration_bonus", "value": 2.0, "operation": "add"}
+      ],
+      "tags": ["cooling", "ability"]
+    },
+    {
+      "id": "boss_breaker",
+      "name": "Boss Breaker",
+      "description": "+50% damage to bosses.",
+      "category": "weapon",
+      "rarity": "rare",
+      "effects": [
+        {"stat": "boss_damage_multiplier", "value": 0.5, "operation": "add"}
+      ],
+      "tags": ["damage", "boss"]
+    },
+    {
+      "id": "emergency_power",
+      "name": "Emergency Power",
+      "description": "When HP below 25%, gain +30% fire rate.",
+      "category": "power",
+      "rarity": "rare",
+      "effects": [
+        {"stat": "low_hp_fire_rate_bonus", "value": 0.3, "operation": "add"}
+      ],
+      "tags": ["power", "defense"]
     }
+  ],
+  "permanent_upgrades": [
+    {"id": "perm_hp_1", "name": "Hull Plating I", "description": "+10 starting HP.", "cost": 20, "category": "ballistics", "effects": [{"stat": "max_hp", "value": 10, "operation": "add"}]},
+    {"id": "perm_hp_2", "name": "Hull Plating II", "description": "+10 starting HP.", "cost": 50, "category": "ballistics", "prerequisite": "perm_hp_1", "effects": [{"stat": "max_hp", "value": 10, "operation": "add"}]},
+    {"id": "perm_shield_1", "name": "Shield Matrix I", "description": "+10 starting shield.", "cost": 25, "category": "defense", "effects": [{"stat": "max_shield", "value": 10.0, "operation": "add"}]},
+    {"id": "perm_shield_2", "name": "Shield Matrix II", "description": "+10 starting shield.", "cost": 60, "category": "defense", "prerequisite": "perm_shield_1", "effects": [{"stat": "max_shield", "value": 10.0, "operation": "add"}]},
+    {"id": "perm_heat_1", "name": "Thermal Conduit I", "description": "+10 max heat.", "cost": 20, "category": "cooling", "effects": [{"stat": "max_heat", "value": 10.0, "operation": "add"}]},
+    {"id": "perm_cooling_1", "name": "Heat Sink I", "description": "+20% heat decay.", "cost": 30, "category": "cooling", "effects": [{"stat": "heat_decay_multiplier", "value": 0.2, "operation": "add"}]},
+    {"id": "perm_power_1", "name": "Reactor Core I", "description": "+10 power capacity.", "cost": 25, "category": "reactor", "effects": [{"stat": "power_capacity", "value": 10.0, "operation": "add"}]},
+    {"id": "perm_range_1", "name": "Targeting Optics I", "description": "+20 tower range.", "cost": 20, "category": "targeting", "effects": [{"stat": "tower_range", "value": 20.0, "operation": "add"}]},
+    {"id": "perm_damage_1", "name": "Ammunition Quality I", "description": "+2 base damage.", "cost": 30, "category": "ballistics", "effects": [{"stat": "damage", "value": 2, "operation": "add"}]},
+    {"id": "perm_fire_rate_1", "name": "Loader Mechanism I", "description": "+10% fire rate.", "cost": 25, "category": "ballistics", "effects": [{"stat": "fire_rate_multiplier", "value": 0.1, "operation": "add"}]},
+    {"id": "perm_salvage_1", "name": "Scrap Training I", "description": "+10% salvage earned.", "cost": 30, "category": "economy", "effects": [{"stat": "salvage_multiplier", "value": 0.1, "operation": "add"}]},
+    {"id": "perm_shield_regen_1", "name": "Shield Charger I", "description": "+1 shield regen/sec.", "cost": 35, "category": "defense", "effects": [{"stat": "shield_regen_rate", "value": 1.0, "operation": "add"}]},
+    {"id": "perm_crit_1", "name": "Precision Optics I", "description": "+5% crit chance.", "cost": 40, "category": "targeting", "effects": [{"stat": "crit_chance", "value": 0.05, "operation": "add"}]},
+    {"id": "perm_boss_1", "name": "Boss Data I", "description": "+15% damage to bosses.", "cost": 40, "category": "targeting", "effects": [{"stat": "boss_damage_multiplier", "value": 0.15, "operation": "add"}]},
+    {"id": "perm_starting_salvage", "name": "Starter Kit", "description": "Begin each run with +5 salvage.", "cost": 50, "category": "economy", "effects": [{"stat": "starting_salvage", "value": 5, "operation": "add"}]}
   ]
 }
